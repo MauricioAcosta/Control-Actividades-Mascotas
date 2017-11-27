@@ -8,7 +8,7 @@ Instale las dependencias con:
 ```bash
 npm install
 sudo npm install -g win-node-env # solo windows
-node server.js
+node server.js o npm start
 ```
 En tu navegador de preferencia:
 ==============================
