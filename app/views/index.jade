@@ -1,0 +1,22 @@
+html
+  head
+    title Control de Animales
+    link(href="/css/main.css", rel="stylesheet")
+    link(href="lib/bootstrap/dist/css/bootstrap.css", rel="stylesheet")
+    link(href="lib/bootstrap/dist/css/bootstrap-theme.css", rel="stylesheet")
+
+    script(src="/lib/angular/angular.min.js" type="text/javascript")
+    script(src="/lib/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript")     
+
+    script(src="/lib/jquery/dist/jquery.min.js" type="text/javascript")
+    script(src="/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript")
+
+    script(src="/modules/main/main.app.js" type="text/javascript")  
+    script(src="/modules/main/controllers/main.controller.js" type="text/javascript")
+    script(src="/app.js" type="text/javascript")   
+
+  body
+    div(ng-app="MyApp")
+      include header
+      div.inicio
+        div(ui-view="")
