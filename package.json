@@ -1,11 +1,19 @@
 {
-  "name": "ActividadesMascotas",
-  "version": "0.0.1",
-  "description": "Sistema para el Control de actividades orientadas a mascotas. Realizado con MEAN",
+  "name": "Control-Actividades-Mascotas",
+  "version": "1.0.0",
+  "description": "Sistema para el Control de actividades orientadas a mascotas. Realizado con MEAN mongodb express angularjs nodejs",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "Andres Acosta",
+  "license": "GNU General Public License v3.0",
   "dependencies": {
-    "express": "~3.4.4",
-    "mongoose": "~3.6.2"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "gridfs-stream": "^1.1.1",
+    "jade": "^1.11.0",
+    "mongoose": "^4.6.5",
+    "multer": "^1.2.0"
   }
 }

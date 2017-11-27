@@ -1,0 +1,38 @@
+div.container(ng-controller="MainController")
+  h2 Usuario
+  hr
+  form(action="/api/user" method="POST" enctype="multipart/form-data")
+    hr
+  h2 Evento Registrado
+  br
+  div.table-responsive
+    table.table
+      thead
+        tr 
+          th
+          th Nombre Evento
+          th fecha
+          th Correo Creador 
+          th Telefono
+      tbody 
+        tr(ng-repeat="user in user") 
+          td
+            img(src="{{baseURL}}image/{{user.image}}", alt="image").image-50
+          td.text-vertically-center(ng-show="user._id != binding._id") {{evento.Nombre_Evento}}
+          td.text-vertically-center(ng-show="user._id != binding._id") {{evento.fecha}}
+          td.text-vertically-center(ng-show="user._id != binding._id") {{evento.correo_Creador}}
+          td.text-vertically-center(ng-show="user._id != binding._id") {{evento.Telefono}}
+
+          td.text-vertically-center(ng-show="status && user._id == binding._id") 
+            input(type="text" ng-model="binding.name")
+          td.text-vertically-center(ng-show="status && user._id == binding._id") 
+            input(type="text" ng-model="binding.lastname")
+          td.text-vertically-center(ng-show="status && user._id == binding._id") 
+            input(type="text" ng-model="binding.email")
+          td.text-vertically-center(ng-show="status && user._id == binding._id") 
+            input(type="text" ng-model="binding.tel")
+          td
+            button.btn.btn-primary.margin-top-15(ng-click="edit(user)" ng-show="user._id != binding._id") Edit
+            button.btn.btn-success.margin-top-15(ng-click="editSave(binding)" ng-show="status && user._id == binding._id") Save
+          td
+            button.btn.btn-danger.margin-top-15(ng-click="delete(user._id)") Delete 
