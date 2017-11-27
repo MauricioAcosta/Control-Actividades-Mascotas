@@ -16,7 +16,7 @@ exports.setPersona = function(req, res) {
 
 		// Creo el objeto Persona
 		Persona.create(
-			{nombre : req.body.nombre,apellido: req.body.apellido, correo: req.body.correo}, 
+			{nombre : req.body.nombre,apellido: req.body.apellido, correo: req.body.correo, pass: req.body.pass},
 			function(err, persona) {
 				if (err)
 					res.send(err);
@@ -33,7 +33,7 @@ exports.setPersona = function(req, res) {
 // Modificamos un objeto Persona de la base de datos
 exports.updatePersona = function(req, res){
 	Persona.update( {_id : req.params.persona_id},
-					{$set:{nombre : req.body.nombre,apellido: req.body.apellido, correo: req.body.correo}}, 
+					{$set:{nombre : req.body.nombre,apellido: req.body.apellido, correo: req.body.correo, pass: req.body.pass}},
 					function(err, persona) {
 						if (err)
 							res.send(err);

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ejemplo MEAN</title>
+	<title>Control de usuario</title>
 	<!-- Cargamos bootstrap -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<!-- Cargamos angular -->
@@ -27,11 +27,13 @@
 						<td>Nombre</td>
 						<td>Apellidos</td>
 						<td>correo</td>
+						<td>contraseña</td>
 					</tr>
 					<tr ng-repeat="persona in personas" ng-click="selectPerson(persona)">
 						<td>{{ persona.nombre }}</td>
 						<td>{{ persona.apellido }}</td>
 						<td>{{ persona.correo }}</td>
+						<td>{{ persona.pass }}</td>
 					</tr>
 				</table>
 			</div>
@@ -43,12 +45,14 @@
 						<input type="text" class="form-control input-lg text-center" placeholder="Apellido" ng-model="newPersona.apellido" required>
 						<br>
 						<input type="email" class="form-control input-lg text-center" placeholder="correo" ng-model="newPersona.correo" required>
+						<br>
+						<input type="password" class="form-control input-lg text-center" placeholder="contraseña" ng-model="newPersona.pass" required>
 					</div>
 
 					<!-- Acciones que podemos realizar en el formulario -->
 					<button type="submit" class="btn btn-success btn-lg" ng-click="registrarPersona()" ng-disabled="myForm.$invalid || selected">Registrar</button>
-					<button type="submit" class="btn btn-warning btn-lg" ng-click="modificarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.correo || !selected">Modificar</button>
-					<button type="submit" class="btn btn-danger btn-lg" ng-click="borrarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.correo || !selected">Borrar</button>
+					<button type="submit" class="btn btn-warning btn-lg" ng-click="modificarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.correo || !newPersona.pass || !selected">Modificar</button>
+					<button type="submit" class="btn btn-danger btn-lg" ng-click="borrarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.correo || !newPersona.pass || !selected">Borrar</button>
 				</form>
 			</div>
 		</div>
