@@ -28,16 +28,16 @@
 					<tr class="info">
 						<td>Nombre</td>
 						<td>Apellidos</td>
-						<!-- <td>Edad</td> -->
-						<td>Correo</td>
-						<td>Contraseña</td>
+						<td>Edad</td>
+            <td>Correo</td>
+            <td>Contraseña</td>
 					</tr>
 					<tr ng-repeat="persona in personas" ng-click="selectPerson(persona)">
 						<td>{{ persona.nombre }}</td>
 						<td>{{ persona.apellido }}</td>
-						<!-- <td>{{ persona.edad }}</td> -->
-						<td>{{ persona.correo }}</td>
-						<td>{{ persona.pass }}</td>
+						<td>{{ persona.edad }}</td>
+            <td>{{ persona.correo }}</td>
+            <td>{{ persona.contraseña }}</td>
 					</tr>
 				</table>
 			</div>
@@ -47,18 +47,18 @@
 						<input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="newPersona.nombre" required>
 						<br>
 						<input type="text" class="form-control input-lg text-center" placeholder="Apellido" ng-model="newPersona.apellido" required>
-						<!-- <br>
-						<input type="text" class="form-control input-lg text-center" placeholder="Edad" ng-model="newPersona.edad" required> -->
 						<br>
-						<input type="email" class="form-control input-lg text-center" placeholder="Correo" ng-model="newPersona.correo" required>
-						<br>
-						<input type="password" class="form-control input-lg text-center" placeholder="Contraseña" ng-model="newPersona.pass" required>
+						<input type="text" class="form-control input-lg text-center" placeholder="Edad" ng-model="newPersona.edad" required>
+            <br>
+            <input type="text" class="form-control input-lg text-center" placeholder="Correo" ng-model="newPersona.correo" required>
+            <br>
+            <input type="password" class="form-control input-lg text-center" placeholder="contraseña" ng-model="newPersona.contraseña" required>
 					</div>
 
 					<!-- Acciones que podemos realizar en el formulario -->
 					<button type="submit" class="btn btn-success btn-lg" ng-click="registrarPersona()" ng-disabled="myForm.$invalid || selected">Registrar</button>
-					<button type="submit" class="btn btn-warning btn-lg" ng-click="modificarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.pass || !selected">Modificar</button>
-					<button type="submit" class="btn btn-danger btn-lg" ng-click="borrarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.pass || !selected">Borrar</button>
+					<button type="submit" class="btn btn-warning btn-lg" ng-click="modificarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.edad || !selected">Modificar</button>
+					<button type="submit" class="btn btn-danger btn-lg" ng-click="borrarPersona(newPersona)" ng-disabled="!newPersona.nombre || !newPersona.apellido || !newPersona.edad || !selected">Borrar</button>
 				</form>
 			</div>
 		</div>

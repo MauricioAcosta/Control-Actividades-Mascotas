@@ -18,7 +18,9 @@ exports.setPersona = function(req, res) {
   Persona.create({
       nombre: req.body.nombre,
       apellido: req.body.apellido,
-      edad: req.body.edad
+      edad: req.body.edad,
+      correo: req.body.correo,
+      pass: req.body.pass
     },
     function(err, persona) {
       if (err)
@@ -41,7 +43,9 @@ exports.updatePersona = function(req, res) {
       $set: {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
-        edad: req.body.edad
+        edad: req.body.edad,
+        correo: req.body.correo,
+        pass: req.body.pass
       }
     },
     function(err, persona) {
