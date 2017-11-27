@@ -1,0 +1,11 @@
+{
+  "name": "Control-Actividades-Mascotas",
+  "version": "0.0.1",
+  "description": "Sistema para el Control de actividades orientadas a mascotas. Realizado con MEAN mongodb express angularjs nodejs",
+  "main": "server.js",
+  "author": "Andres Acosta",
+  "dependencies": {
+    "express": "~3.4.4",
+    "mongoose": "~3.6.2"
+  }
+}
